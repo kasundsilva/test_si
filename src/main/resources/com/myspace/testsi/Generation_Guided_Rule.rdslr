@@ -1,0 +1,12 @@
+package com.myspace.testsi;
+
+import java.lang.Number;
+import java.lang.String;
+
+rule "Generation_Guided_Rule"
+	dialect "mvel"
+	when
+		Generation_Totals $Gentotal: NIMWD > 3600
+	then
+		Raise alert Dispatch Exceeds Limit
+end
